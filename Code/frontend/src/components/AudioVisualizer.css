@@ -1,0 +1,31 @@
+/* ── Audio Visualizer ────────────────────────────────────────── */
+
+.viz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  padding: 8px 0;
+}
+
+.viz-bar {
+  width: 4px;
+  border-radius: 4px;
+  background: rgba(99, 102, 241, 0.2);
+  transition: background 0.15s ease, height 0.1s ease;
+}
+
+.viz--active .viz-bar {
+  animation: barIdle 1.2s ease-in-out infinite alternate;
+}
+
+.viz-bar--active {
+  background: var(--accent) !important;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+@keyframes barIdle {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
